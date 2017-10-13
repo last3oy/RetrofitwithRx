@@ -33,6 +33,8 @@ import rx.subscriptions.CompositeSubscription;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static String KEY_USER = "user";
+    private static String KEY_BUNDLE = "bundle";
     private ActivityMainBinding mBinding;
     private FollowerUserListAdapter adapter;
     private String user;
@@ -82,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(String user) {
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("user", user);
-                intent.putExtra("bundle", bundle);
+                bundle.putString(KEY_USER, user);
+                intent.putExtra(KEY_BUNDLE, bundle);
                 startActivity(intent);
             }
         });
